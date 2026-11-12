@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: "Royal Advertising — A Better Way to Advertising",
   description:
     "Royal Advertising is one of the fastest growing corporate and marketing advertising agencies in Mumbai, India.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon",
+  },
 };
 
 export default function RootLayout({

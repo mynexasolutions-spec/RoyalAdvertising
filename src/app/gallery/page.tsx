@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Pagination } from "@/components/Pagination";
 import { Phone, Eye, CheckCircle2, X } from "lucide-react";
 
 export type GalleryItem = {
@@ -1495,14 +1496,43 @@ export const CATEGORIES = [
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const ITEMS_PER_PAGE = 9;
+
+  // Sync state from URL query on initial load/refresh
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const pageParam = parseInt(params.get("page") || "1", 10);
+      if (!isNaN(pageParam) && pageParam > 0) {
+        setCurrentPage(pageParam);
+      }
+    }
+  }, []);
 
   const totalPages = Math.ceil(GALLERY_ITEMS.length / ITEMS_PER_PAGE);
   const pagedItems = GALLERY_ITEMS.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
+
+  const updateUrl = (page: number) => {
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      if (page > 1) {
+        url.searchParams.set("page", page.toString());
+      } else {
+        url.searchParams.delete("page");
+      }
+      window.history.replaceState({}, "", url.toString());
+    }
+  };
+
+  function handlePageChange(page: number) {
+    setCurrentPage(page);
+    updateUrl(page);
+    window.scrollTo({ top: 350, behavior: "smooth" });
+  }
 
   return (
     <>
@@ -1581,41 +1611,12 @@ export default function GalleryPage() {
               ))}
             </div>
 
-            {/* ── PAGINATION (CIRCULAR PILLS) ── */}
-            {totalPages > 1 && (
-              <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 mt-12 flex-wrap px-2">
-                <button
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  disabled={currentPage === 1}
-                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-gray-600 hover:bg-[#e31e24] hover:text-white hover:border-[#e31e24] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-                  aria-label="Previous page"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
-                </button>
-
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full text-[13px] sm:text-[15px] font-bold transition-all shadow-sm flex items-center justify-center ${currentPage === page
-                      ? "bg-[#e31e24] text-white shadow-red-500/30 scale-105"
-                      : "border border-gray-200 bg-white text-gray-700 hover:border-[#e31e24] hover:text-[#e31e24]"
-                      }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-
-                <button
-                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                  disabled={currentPage === totalPages}
-                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-gray-600 hover:bg-[#e31e24] hover:text-white hover:border-[#e31e24] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
-                  aria-label="Next page"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6" /></svg>
-                </button>
-              </div>
-            )}
+            {/* ── PAGINATION ── */}
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
 
             {/* CTA banner */}
             <div className="mt-16 p-8 rounded-[24px] bg-gray-50 border border-gray-200/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
