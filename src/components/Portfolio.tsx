@@ -5,20 +5,20 @@ import { ArrowRight } from "lucide-react";
 
 const PROJECTS = [
   {
-    title: "Outdoor Billboard Campaign",
-    category: "Billboard & Unipole",
+    title: "Outdoor Billboard",
+    category: "",
     imageSrc: "/images/outdoor-billboard-advertising.jpg",
     desc: "High-impact highway unipole & billboard installations across Northern India.",
   },
   {
-    title: "Exhibition Stall Fabrication",
-    category: "Exhibition Solutions",
+    title: "Exhibition Stall",
+    category: "",
     imageSrc: "/images/exhibition-booth.jpg",
     desc: "Custom modular stall design, fabrication and installation for leading brands.",
   },
   {
-    title: "Storefront & Brand Signage",
-    category: "Signage & Display",
+    title: "Storefront & Brand",
+    category: "",
     imageSrc: "/images/storefront-signage.jpg",
     desc: "End-to-end storefront branding, ACP boards and glow sign boards.",
   },
@@ -64,7 +64,7 @@ export default function Portfolio() {
             {PROJECTS.map((project) => (
               <div
                 key={project.title}
-                className="relative rounded-[22px] overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-slate-900"
+                className="relative rounded-[22px] overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 bg-slate-900"
                 style={{ aspectRatio: "3/4" }}
               >
                 {/* Real full-bleed background image */}
@@ -73,21 +73,23 @@ export default function Portfolio() {
                   alt={project.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 300px"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-center transition-transform duration-700"
                 />
 
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
                 {/* Bottom card details */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
-                  <span className="text-[11px] font-bold text-[#e31e24] tracking-widest uppercase mb-2 block">
-                    {project.category}
-                  </span>
-                  <h3 className="text-white font-black text-[18px] leading-snug mb-1.5">
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10">
+                  {project.category && (
+                    <span className="text-[12px] font-bold text-[#e31e24] tracking-widest uppercase mb-1.5 block">
+                      {project.category}
+                    </span>
+                  )}
+                  <h3 className="text-white font-black text-[18px] sm:text-[19px] xl:text-[21px] leading-tight mb-2 drop-shadow-md whitespace-nowrap overflow-hidden text-ellipsis">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-[12px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-gray-200 text-[13px] sm:text-[13.5px] leading-relaxed drop-shadow-sm line-clamp-3">
                     {project.desc}
                   </p>
                 </div>

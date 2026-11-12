@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-
+import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#0b0c0e] text-white pt-16 pb-12 border-t border-gray-800">
@@ -46,27 +46,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-[14px] text-gray-400 font-medium">
               <li>
-                <a href="#home" className="hover:text-white hover:translate-x-1 inline-block transition-all">
+                <a href="/" className="hover:text-white hover:translate-x-1 inline-block transition-all">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white hover:translate-x-1 inline-block transition-all">
+                <a href="/about" className="hover:text-white hover:translate-x-1 inline-block transition-all">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">
+                <a href="/services" className="hover:text-white hover:translate-x-1 inline-block transition-all">
                   Our Services
                 </a>
               </li>
               <li>
-                <a href="#work" className="hover:text-white hover:translate-x-1 inline-block transition-all">
+                <a href="/work" className="hover:text-white hover:translate-x-1 inline-block transition-all">
                   Our Work
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white hover:translate-x-1 inline-block transition-all">
+                <a href="/gallery" className="hover:text-white hover:translate-x-1 inline-block transition-all">
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all">
                   Contact Us
                 </a>
               </li>
@@ -80,6 +85,12 @@ export default function Footer() {
             </h4>
 
             <div className="space-y-4 text-[14px] text-gray-400">
+              {/* Landline */}
+              <a href="tel:+911146252249" className="flex items-center gap-3 hover:text-white transition-colors group">
+                <Phone size={16} className="text-[#e31e24] flex-shrink-0" />
+                <span className="font-semibold text-white">+91 11 4625 2249</span>
+              </a>
+
               {/* Phone 1 */}
               <a href="tel:9910327224" className="flex items-center gap-3 hover:text-white transition-colors group">
                 <Phone size={16} className="text-[#e31e24] flex-shrink-0" />

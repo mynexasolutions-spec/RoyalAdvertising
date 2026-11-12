@@ -136,10 +136,10 @@ export default function AboutPage() {
                   </a>
 
                   <a
-                    href="tel:9910327224"
+                    href="tel:+911146252249"
                     className="inline-flex items-center gap-2 border border-gray-300 hover:border-gray-900 text-gray-900 text-[15px] font-bold px-7 py-4 rounded-xl transition-all"
                   >
-                    Call: +91 99103 27224
+                    Call: +91 11 4625 2249
                   </a>
                 </div>
               </div>
@@ -151,6 +151,7 @@ export default function AboutPage() {
                     src="/images/outdoor-billboard-advertising.jpg"
                     alt="Royal Advertising Outdoor Billboard Unipole Media"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />

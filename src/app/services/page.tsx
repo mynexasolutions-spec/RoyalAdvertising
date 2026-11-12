@@ -155,6 +155,7 @@ export default function ServicesPage() {
               src="/images/large-format-printing.jpg"
               alt="Royal Advertising production facility"
               fill
+              sizes="100vw"
               className="object-cover object-center opacity-25"
               priority
             />
@@ -243,20 +244,19 @@ export default function ServicesPage() {
                 <div
                   key={svc.id}
                   id={svc.id}
-                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
-                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                  }`}
+                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                    }`}
                 >
                   {/* Image */}
                   <div
-                    className={`relative h-[320px] sm:h-[400px] lg:h-[480px] rounded-[28px] overflow-hidden shadow-2xl group ${
-                      index % 2 === 1 ? "lg:col-start-2" : ""
-                    }`}
+                    className={`relative h-[320px] sm:h-[400px] lg:h-[480px] rounded-[28px] overflow-hidden shadow-2xl group ${index % 2 === 1 ? "lg:col-start-2" : ""
+                      }`}
                   >
                     <Image
                       src={svc.imageSrc}
                       alt={svc.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -430,11 +430,11 @@ export default function ServicesPage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
                 <a
-                  href="tel:9910327224"
+                  href="tel:+911146252249"
                   className="inline-flex items-center gap-3 bg-white text-[#e31e24] font-black text-[15px] px-8 py-4 rounded-full hover:bg-gray-100 transition-all shadow-lg group"
                 >
                   <Phone size={18} />
-                  +91 99103 27224
+                  +91 11 4625 2249
                 </a>
                 <a
                   href="mailto:royaladvertising786@gmail.com"

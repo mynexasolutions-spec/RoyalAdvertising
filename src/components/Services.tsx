@@ -55,7 +55,7 @@ export default function Services() {
   return (
     <section id="services" className="bg-white py-12 lg:py-16">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* ── TOP: Section Intro & 5-Image Featured Grid ── */}
         <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-20 items-start mb-14 lg:mb-18">
 
@@ -96,9 +96,9 @@ export default function Services() {
             {/* 01. Outdoor Advertising */}
             <div className="h-[230px] sm:h-full">
               <ServiceCard
-                num="01."
-                title="Outdoor Advertising"
-                imageSrc="/images/outdoor-billboard-advertising.jpg"
+                num=""
+                title="Outdoor Boards"
+                imageSrc="/gallery/outdoor-boards.jpg"
                 href="/services#outdoor-advertising"
                 active={false}
               />
@@ -107,9 +107,9 @@ export default function Services() {
             {/* 05. Printing Solutions */}
             <div className="h-[230px] sm:h-full">
               <ServiceCard
-                num="05."
+                num=""
                 title="Printing Solutions"
-                imageSrc="/images/large-format-printing.jpg"
+                imageSrc="/gallery/home-gallery3.jpeg"
                 href="/services#printing-solutions"
                 active={true}
               />
@@ -118,9 +118,9 @@ export default function Services() {
             {/* 06. Exhibition Solutions */}
             <div className="h-[260px] sm:h-[230px] lg:h-full sm:col-span-2 lg:col-span-1 lg:row-span-2">
               <ServiceCard
-                num="06."
-                title="Exhibition Solutions"
-                imageSrc="/images/exhibition-booth.jpg"
+                num=""
+                title="STANDEES"
+                imageSrc="/gallery/standees.jpg"
                 href="/services#exhibition-events"
                 tall
               />
@@ -129,9 +129,9 @@ export default function Services() {
             {/* 03. Signage & Display */}
             <div className="h-[230px] sm:h-full">
               <ServiceCard
-                num="03."
-                title="Signage & Display"
-                imageSrc="/images/storefront-signage.jpg"
+                num=""
+                title="Inshop Brandings"
+                imageSrc="/gallery/inshop-branding.jpg"
                 href="/services#boards-signage"
                 active={false}
               />
@@ -140,9 +140,9 @@ export default function Services() {
             {/* 04. Branding & Identity */}
             <div className="h-[230px] sm:h-full">
               <ServiceCard
-                num="04."
-                title="Branding & Identity"
-                imageSrc="/images/brand-stationery.jpg"
+                num=""
+                title="Main Boards"
+                imageSrc="/gallery/main-boards.jpg"
                 href="/services#retail-inshop"
                 active={false}
               />
@@ -170,7 +170,7 @@ export default function Services() {
             {WORKFLOW_STEPS.map((step) => {
               const Icon = step.icon;
               return (
-                <div 
+                <div
                   key={step.num}
                   className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-[#e31e24]/60 transition-all group"
                 >
@@ -263,37 +263,26 @@ function ServiceCard({
   return (
     <Link
       href={href}
-      className="relative rounded-[22px] overflow-hidden group cursor-pointer h-full w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl border border-gray-100 shadow-md block"
+      className="relative rounded-[22px] overflow-hidden cursor-pointer h-full w-full border border-gray-100 shadow-md block"
     >
       <Image
         src={imageSrc}
         alt={title}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+        className="object-cover object-center"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 group-hover:from-black/90 transition-all" />
-      <div className="absolute top-0 left-0 w-[5px] h-full bg-[#e31e24] group-hover:w-[7px] transition-all duration-300 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
 
       <div className="relative h-full p-6 lg:p-7 flex flex-col justify-end z-10">
         <span className="text-[13px] font-bold text-[#e31e24] mb-1.5 tracking-widest uppercase drop-shadow-sm">
           {num}
         </span>
 
-        <h3 className="text-white font-black text-[20px] lg:text-[23px] leading-snug mb-4 group-hover:text-red-50 transition-colors drop-shadow-md">
+        <h3 className="text-white font-black text-[26px] lg:text-[30px] leading-snug mb-4 drop-shadow-md">
           {title}
         </h3>
-
-        <div
-          className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-            active
-              ? "bg-[#e31e24] text-white shadow-lg shadow-red-600/50"
-              : "bg-white/20 text-white backdrop-blur-md group-hover:bg-[#e31e24] group-hover:scale-105"
-          }`}
-        >
-          <ArrowRight size={16} strokeWidth={2.4} />
-        </div>
       </div>
     </Link>
   );

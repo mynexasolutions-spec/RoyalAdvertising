@@ -56,11 +56,11 @@ export default function ContactSection() {
                 </p>
 
                 <a
-                  href="tel:+919315238601"
+                  href="tel:+911146252249"
                   className="inline-flex items-center gap-3 bg-[#e31e24] hover:bg-[#c01820] text-white text-[14px] font-bold px-7 py-3 rounded-full transition-all duration-200 group w-fit shadow-lg shadow-red-600/30"
                 >
                   <Phone size={15} />
-                  Call Now: +91 93152 38601
+                  Call Now: 011 4625 2249
                   <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -138,7 +138,7 @@ export default function ContactSection() {
                 {/* Contact info row below form */}
                 <div className="mt-7 pt-6 border-t border-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                   <a
-                    href="tel:+919315238601"
+                    href="tel:+911146252249"
                     className="flex items-center gap-3 text-gray-700 hover:text-[#e31e24] transition-colors group flex-shrink-0"
                   >
                     <div className="w-10 h-10 rounded-full bg-red-50 text-[#e31e24] flex items-center justify-center flex-shrink-0 group-hover:bg-[#e31e24] group-hover:text-white transition-all">
@@ -146,8 +146,8 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="text-[11px] text-gray-400 font-medium">Direct Line</p>
-                      <p className="text-[14px] font-black text-gray-900 group-hover:text-[#e31e24] leading-tight whitespace-nowrap">+91 93152 38601</p>
-                      <p className="text-[12px] font-semibold text-gray-500 leading-tight whitespace-nowrap">+91 99103 27224</p>
+                      <p className="text-[14px] font-black text-gray-900 group-hover:text-[#e31e24] leading-tight whitespace-nowrap">+91 11 4625 2249</p>
+                      <p className="text-[12px] font-semibold text-gray-500 leading-tight whitespace-nowrap">+91 93152 38601</p>
                     </div>
                   </a>
 

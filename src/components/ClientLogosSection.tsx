@@ -111,6 +111,7 @@ export default function ClientLogosSection() {
                       src={brand.image}
                       alt={brand.name}
                       fill
+                      sizes="128px"
                       className="object-contain filter grayscale contrast-125 opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                     />
                   </div>

@@ -78,10 +78,13 @@ export default function ContactPage() {
                   Call Directly
                 </span>
                 <div className="space-y-1.5">
-                  <a href="tel:+919315238601" className="text-[19px] font-black text-gray-900 hover:text-[#e31e24] block transition-colors">
+                  <a href="tel:+911146252249" className="text-[19px] font-black text-gray-900 hover:text-[#e31e24] block transition-colors">
+                    +91 11 4625 2249
+                  </a>
+                  <a href="tel:+919315238601" className="text-[17px] font-bold text-gray-700 hover:text-[#e31e24] block transition-colors">
                     +91 93152 38601
                   </a>
-                  <a href="tel:+919910327224" className="text-[19px] font-black text-gray-600 hover:text-[#e31e24] block transition-colors">
+                  <a href="tel:+919910327224" className="text-[17px] font-bold text-gray-600 hover:text-[#e31e24] block transition-colors">
                     +91 99103 27224
                   </a>
                 </div>

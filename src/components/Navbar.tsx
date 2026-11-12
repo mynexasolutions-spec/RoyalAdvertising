@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Our Work", href: "/work" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -25,8 +26,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white shadow-md border-b border-gray-100"
-          : "bg-white/95 backdrop-blur-sm"
+        ? "bg-white shadow-md border-b border-gray-100"
+        : "bg-white/95 backdrop-blur-sm"
         }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,10 +65,10 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* ── CTA Button (Direct dial to +91 93152 38601) ── */}
+          {/* ── CTA Button (Direct dial to +91 11 4625 2249) ── */}
           <div className="hidden lg:flex items-center">
             <a
-              href="tel:+919315238601"
+              href="tel:+911146252249"
               className="flex items-center gap-2 bg-[#e31e24] hover:bg-[#c01820] text-white text-[14px] font-bold px-6 py-3 rounded-full transition-all shadow-md shadow-red-500/20"
             >
               <Phone size={14} strokeWidth={2.5} />
@@ -101,7 +102,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="tel:+919315238601"
+              href="tel:+911146252249"
               onClick={() => setMenuOpen(false)}
               className="mt-3 flex items-center justify-center gap-2 bg-[#e31e24] text-white text-[15px] font-bold px-5 py-3.5 rounded-full shadow-md"
             >

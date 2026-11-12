@@ -7,6 +7,7 @@ import Mission from "@/components/Mission";
 import ClientLogosSection from "@/components/ClientLogosSection";
 import InfrastructureSection from "@/components/InfrastructureSection";
 import Portfolio from "@/components/Portfolio";
+import HomeGallerySection from "@/components/HomeGallerySection";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <ClientLogosSection />
         <InfrastructureSection />
         <Portfolio />
+        <HomeGallerySection />
         <Testimonials />
         <ContactSection />
       </main>

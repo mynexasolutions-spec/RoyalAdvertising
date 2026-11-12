@@ -97,7 +97,7 @@ export default function Capabilities() {
             {/* ── RIGHT: Machine Printing Image (clean finish) ── */}
             <div className="relative min-h-[260px] lg:min-h-full w-full overflow-hidden rounded-r-[28px] lg:rounded-r-[36px]">
               <Image
-                src="/images/large-format-printing.jpg"
+                src="/gallery/home-gallery1.jpeg"
                 alt="Large format industrial printing production"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
