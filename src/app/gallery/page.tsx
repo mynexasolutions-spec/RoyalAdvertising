@@ -1591,7 +1591,7 @@ export default function GalleryPage() {
 
             {/* Images Grid - Pure image cards (no tags, no text, no hover effect) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {pagedItems.map((item) => (
+              {pagedItems.map((item, index) => (
                 <div
                   key={item.id}
                   onClick={() => setSelectedImage(item)}
@@ -1603,6 +1603,8 @@ export default function GalleryPage() {
                       src={item.image}
                       alt="Gallery work"
                       fill
+                      priority={index < 3}
+                      loading={index < 3 ? "eager" : "lazy"}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-center"
                     />
